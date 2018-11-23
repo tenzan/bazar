@@ -13,7 +13,8 @@ class CategoriesController < ApplicationController
             flash[:notice] = 'Category has been created.'
             redirect_to @category
         else
-            #nothing yet
+            flash.now[:alert] = "Category has not been created."
+            render "new"
         end
         
     end
